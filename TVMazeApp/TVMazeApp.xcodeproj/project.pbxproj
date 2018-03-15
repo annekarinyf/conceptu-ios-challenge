@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C40F205B19CB004C9C77 /* AppDelegate.swift */; };
+		DF19C412205B19CB004C9C77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C411205B19CB004C9C77 /* ViewController.swift */; };
+		DF19C415205B19CB004C9C77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF19C413205B19CB004C9C77 /* Main.storyboard */; };
+		DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19C416205B19CB004C9C77 /* TVMazeApp.xcdatamodeld */; };
+		DF19C41A205B19CB004C9C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF19C419205B19CB004C9C77 /* Assets.xcassets */; };
+		DF19C41D205B19CB004C9C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF19C41B205B19CB004C9C77 /* LaunchScreen.storyboard */; };
+		DF19C428205B19CB004C9C77 /* TVMazeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C427205B19CB004C9C77 /* TVMazeAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF19C424205B19CB004C9C77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF19C404205B19CA004C9C77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF19C40B205B19CA004C9C77;
+			remoteInfo = TVMazeApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DF19C40C205B19CB004C9C77 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF19C40F205B19CB004C9C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DF19C411205B19CB004C9C77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF19C414205B19CB004C9C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF19C417205B19CB004C9C77 /* TVMazeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVMazeApp.xcdatamodel; sourceTree = "<group>"; };
+		DF19C419205B19CB004C9C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF19C41C205B19CB004C9C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF19C41E205B19CB004C9C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF19C423205B19CB004C9C77 /* TVMazeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMazeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF19C427205B19CB004C9C77 /* TVMazeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAppTests.swift; sourceTree = "<group>"; };
+		DF19C429205B19CB004C9C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF19C409205B19CA004C9C77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF19C420205B19CB004C9C77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF19C403205B19CA004C9C77 = {
+			isa = PBXGroup;
+			children = (
+				DF19C40E205B19CB004C9C77 /* TVMazeApp */,
+				DF19C426205B19CB004C9C77 /* TVMazeAppTests */,
+				DF19C40D205B19CB004C9C77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF19C40D205B19CB004C9C77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C40C205B19CB004C9C77 /* TVMazeApp.app */,
+				DF19C423205B19CB004C9C77 /* TVMazeAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF19C40E205B19CB004C9C77 /* TVMazeApp */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C432205B19D6004C9C77 /* Model */,
+				DF19C433205B19E0004C9C77 /* View */,
+				DF19C434205B19E5004C9C77 /* ViewModel */,
+				DF19C435205B1A32004C9C77 /* Network */,
+				DF19C436205B1A46004C9C77 /* Common */,
+				DF19C437205B1A4D004C9C77 /* App */,
+				DF19C438205B1A54004C9C77 /* Resources */,
+				DF19C439205B1A5B004C9C77 /* Supporting Files */,
+				DF19C411205B19CB004C9C77 /* ViewController.swift */,
+				DF19C416205B19CB004C9C77 /* TVMazeApp.xcdatamodeld */,
+			);
+			path = TVMazeApp;
+			sourceTree = "<group>";
+		};
+		DF19C426205B19CB004C9C77 /* TVMazeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C427205B19CB004C9C77 /* TVMazeAppTests.swift */,
+				DF19C429205B19CB004C9C77 /* Info.plist */,
+			);
+			path = TVMazeAppTests;
+			sourceTree = "<group>";
+		};
+		DF19C432205B19D6004C9C77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF19C433205B19E0004C9C77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF19C434205B19E5004C9C77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF19C435205B1A32004C9C77 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DF19C436205B1A46004C9C77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DF19C437205B1A4D004C9C77 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C40F205B19CB004C9C77 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DF19C438205B1A54004C9C77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C413205B19CB004C9C77 /* Main.storyboard */,
+				DF19C419205B19CB004C9C77 /* Assets.xcassets */,
+				DF19C41B205B19CB004C9C77 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DF19C439205B1A5B004C9C77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF19C41E205B19CB004C9C77 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF19C40B205B19CA004C9C77 /* TVMazeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF19C42C205B19CB004C9C77 /* Build configuration list for PBXNativeTarget "TVMazeApp" */;
+			buildPhases = (
+				DF19C408205B19CA004C9C77 /* Sources */,
+				DF19C409205B19CA004C9C77 /* Frameworks */,
+				DF19C40A205B19CA004C9C77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVMazeApp;
+			productName = TVMazeApp;
+			productReference = DF19C40C205B19CB004C9C77 /* TVMazeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF19C422205B19CB004C9C77 /* TVMazeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF19C42F205B19CB004C9C77 /* Build configuration list for PBXNativeTarget "TVMazeAppTests" */;
+			buildPhases = (
+				DF19C41F205B19CB004C9C77 /* Sources */,
+				DF19C420205B19CB004C9C77 /* Frameworks */,
+				DF19C421205B19CB004C9C77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF19C425205B19CB004C9C77 /* PBXTargetDependency */,
+			);
+			name = TVMazeAppTests;
+			productName = TVMazeAppTests;
+			productReference = DF19C423205B19CB004C9C77 /* TVMazeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF19C404205B19CA004C9C77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Anne Kariny Silva Freitas";
+				TargetAttributes = {
+					DF19C40B205B19CA004C9C77 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DF19C422205B19CB004C9C77 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DF19C40B205B19CA004C9C77;
+					};
+				};
+			};
+			buildConfigurationList = DF19C407205B19CA004C9C77 /* Build configuration list for PBXProject "TVMazeApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF19C403205B19CA004C9C77;
+			productRefGroup = DF19C40D205B19CB004C9C77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF19C40B205B19CA004C9C77 /* TVMazeApp */,
+				DF19C422205B19CB004C9C77 /* TVMazeAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF19C40A205B19CA004C9C77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF19C41D205B19CB004C9C77 /* LaunchScreen.storyboard in Resources */,
+				DF19C41A205B19CB004C9C77 /* Assets.xcassets in Resources */,
+				DF19C415205B19CB004C9C77 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF19C421205B19CB004C9C77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF19C408205B19CA004C9C77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF19C412205B19CB004C9C77 /* ViewController.swift in Sources */,
+				DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */,
+				DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF19C41F205B19CB004C9C77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF19C428205B19CB004C9C77 /* TVMazeAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF19C425205B19CB004C9C77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF19C40B205B19CA004C9C77 /* TVMazeApp */;
+			targetProxy = DF19C424205B19CB004C9C77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF19C413205B19CB004C9C77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF19C414205B19CB004C9C77 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF19C41B205B19CB004C9C77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF19C41C205B19CB004C9C77 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF19C42A205B19CB004C9C77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DF19C42B205B19CB004C9C77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF19C42D205B19CB004C9C77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F476P237J6;
+				INFOPLIST_FILE = TVMazeApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kariny.TVMazeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF19C42E205B19CB004C9C77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F476P237J6;
+				INFOPLIST_FILE = TVMazeApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kariny.TVMazeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF19C430205B19CB004C9C77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F476P237J6;
+				INFOPLIST_FILE = TVMazeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kariny.TVMazeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMazeApp.app/TVMazeApp";
+			};
+			name = Debug;
+		};
+		DF19C431205B19CB004C9C77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F476P237J6;
+				INFOPLIST_FILE = TVMazeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kariny.TVMazeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMazeApp.app/TVMazeApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF19C407205B19CA004C9C77 /* Build configuration list for PBXProject "TVMazeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF19C42A205B19CB004C9C77 /* Debug */,
+				DF19C42B205B19CB004C9C77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF19C42C205B19CB004C9C77 /* Build configuration list for PBXNativeTarget "TVMazeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF19C42D205B19CB004C9C77 /* Debug */,
+				DF19C42E205B19CB004C9C77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF19C42F205B19CB004C9C77 /* Build configuration list for PBXNativeTarget "TVMazeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF19C430205B19CB004C9C77 /* Debug */,
+				DF19C431205B19CB004C9C77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF19C416205B19CB004C9C77 /* TVMazeApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF19C417205B19CB004C9C77 /* TVMazeApp.xcdatamodel */,
+			);
+			currentVersion = DF19C417205B19CB004C9C77 /* TVMazeApp.xcdatamodel */;
+			path = TVMazeApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DF19C404205B19CA004C9C77 /* Project object */;
+}
