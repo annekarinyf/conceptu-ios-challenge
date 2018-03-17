@@ -11,8 +11,8 @@ import UIKit
 class DetailShowViewController: UIViewController {
     
     var show: Show?
-    var seasons = [Season]()
     var showViewModel: ShowViewModel?
+    var seasonViewModel: SeasonViewModel?
     
     @IBOutlet var showPoster: UIImageView!
     @IBOutlet var detailsTableView: UITableView!
@@ -20,21 +20,42 @@ class DetailShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let show = show {
             showViewModel = ShowViewModel(show: show)
             checkImage()
-            getSeasons(fromShowId: show.id)
+            getSeasons(fromShow: show, { (finished) in
+                if finished {
+                    self.getEpisodes(fromShow: show)
+                }
+            })
         }
     }
     
-    private func getSeasons(fromShowId id: Int) {
-        ApiHelper.getSeasons(forShowId: id) { (seasons) in
-            self.seasons = seasons
-            self.detailsTableView.reloadData()
+    private func getSeasons(fromShow show: Show, _ completion: @escaping (_ finished: Bool) -> Void) {
+        ApiHelper.getSeasons(forShowId: show.id) { (seasons) in
+            if let _ = self.show {
+                self.show?.seasons = seasons
+                self.detailsTableView.reloadData()
+                completion(true)
+            }
+        }
+    }
+    
+    private func getEpisodes(fromShow show: Show) {
+        ApiHelper.getEpisodes(forShowId: show.id) { (episodes) in
+            if let _ = self.show {
+                for season in show.seasons {
+                    for episode in episodes {
+                        if season.number == episode.season {
+                            season.episodes.append(episode)
+                        }
+                    }
+                }
+                self.detailsTableView.reloadData()
+            }
         }
     }
     
@@ -55,15 +76,28 @@ class DetailShowViewController: UIViewController {
 
 extension DetailShowViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if let _ = show, let seasons = show?.seasons {
+            return seasons.count+1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Seasons"
+        
+        if section != 0 {
+            if let _ = show, let season = show?.seasons[section-1] {
+                seasonViewModel = SeasonViewModel(season: season)
+                if let seasonViewModel = seasonViewModel {
+                    return seasonViewModel.description
+                } else {
+                    return nil
+                }
+            }
         } else {
             return nil
         }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,7 +115,14 @@ extension DetailShowViewController: UITableViewDataSource {
         if section == 0 {
             return 4
         } else {
-            return seasons.count
+            if let show = show {
+                for season in show.seasons {
+                    if section == season.number {
+                        return season.episodes.count
+                    }
+                }
+            }
+            return 0
         }
     }
 
@@ -106,9 +147,11 @@ extension DetailShowViewController: UITableViewDataSource {
             }
         } else {
             cell.selectionStyle = UITableViewCellSelectionStyle.default
-            
-            let seasonViewModel = SeasonViewModel(season: seasons[indexPath.row])
-            cell.textLabel?.text = seasonViewModel.description
+            if let show = show {
+                let season = show.seasons[indexPath.section-1]
+                let episode = season.episodes[indexPath.row]
+                cell.textLabel?.text = episode.name
+            }
         }
          return cell
     }
