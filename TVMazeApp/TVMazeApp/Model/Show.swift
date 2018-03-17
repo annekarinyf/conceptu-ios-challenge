@@ -10,17 +10,29 @@ import UIKit
 
 class Show {
     
+    var id: Int
     var name: String
     var imageUrl: String
     var image: UIImage?
+    var days: [String]
+    var genres: [String]
+    var summary: String
     
     init?(json: JSON) {
-        guard let name = json["name"] as? String,
+        guard let id = json["id"] as? Int,
+        let name = json["name"] as? String,
         let imageJson = json["image"] as? JSON,
-        let imageUrl = imageJson["medium"] as? String else { return nil }
+        let imageUrl = imageJson["medium"] as? String,
+        let schedule = json["schedule"] as? JSON,
+        let days = schedule["days"] as? [String],
+        let genres = json["genres"] as? [String],
+        let summary = json["summary"] as? String else { return nil }
         
+        self.id = id
         self.name = name
         self.imageUrl = imageUrl
+        self.days = days
+        self.genres = genres
+        self.summary = summary
     }
-
 }
