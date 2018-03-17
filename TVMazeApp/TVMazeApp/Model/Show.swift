@@ -14,6 +14,7 @@ class Show {
     var name: String
     var imageUrl: String
     var image: UIImage?
+    var time: String
     var days: [String]
     var genres: [String]
     var summary: String
@@ -24,6 +25,7 @@ class Show {
         let imageJson = json["image"] as? JSON,
         let imageUrl = imageJson["medium"] as? String,
         let schedule = json["schedule"] as? JSON,
+        let time = schedule["time"] as? String,
         let days = schedule["days"] as? [String],
         let genres = json["genres"] as? [String],
         let summary = json["summary"] as? String else { return nil }
@@ -31,6 +33,7 @@ class Show {
         self.id = id
         self.name = name
         self.imageUrl = imageUrl
+        self.time = time
         self.days = days
         self.genres = genres
         self.summary = summary
