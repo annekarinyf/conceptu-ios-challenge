@@ -12,6 +12,7 @@ class Season {
     var id: Int
     var number: Int
     var name: String
+    var episodes = [Episode]()
     
     init?(json: JSON) {
         guard let id = json["id"] as? Int,

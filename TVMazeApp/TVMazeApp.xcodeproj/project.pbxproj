@@ -170,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				DFAFF41F205B32D10019698E /* Show.swift */,
-				DF01F048205D825600CC3AA3 /* Episode.swift */,
 				DFFEBF54205D989C00657E4B /* Season.swift */,
+				DF01F048205D825600CC3AA3 /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

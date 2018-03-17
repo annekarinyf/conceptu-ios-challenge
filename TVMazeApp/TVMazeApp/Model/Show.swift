@@ -18,6 +18,7 @@ class Show {
     var days: [String]
     var genres: [String]
     var summary: String
+    var seasons = [Season]()
     
     init?(json: JSON) {
         guard let id = json["id"] as? Int,
