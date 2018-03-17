@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00536FF23DFA45901F39D1FD /* Pods_TVMazeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E615BCC8C994BAC1CE71A7 /* Pods_TVMazeAppTests.framework */; };
 		A93C43795C02175C06C97092 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D87F0726B4CE3F8076C756 /* Pods_TVMazeApp.framework */; };
+		DF01F046205D3D9C00CC3AA3 /* DetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */; };
 		DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C40F205B19CB004C9C77 /* AppDelegate.swift */; };
 		DF19C415205B19CB004C9C77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF19C413205B19CB004C9C77 /* Main.storyboard */; };
 		DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19C416205B19CB004C9C77 /* TVMazeApp.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 		44E615BCC8C994BAC1CE71A7 /* Pods_TVMazeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D87F0726B4CE3F8076C756 /* Pods_TVMazeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF4FA83DF8EC7EC27EAE699 /* Pods-TVMazeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShowViewController.swift; sourceTree = "<group>"; };
 		DF19C40C205B19CB004C9C77 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF19C40F205B19CB004C9C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF19C414205B19CB004C9C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DF01F047205D441300CC3AA3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DFAFF42D205B478D0019698E /* ShowCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DF19C403205B19CA004C9C77 = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +169,11 @@
 		DF19C433205B19E0004C9C77 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF01F047205D441300CC3AA3 /* Cells */,
 				DFAFF427205B3F420019698E /* TabBarController.swift */,
 				DFAFF429205B40330019698E /* ShowsViewController.swift */,
 				DFAFF42B205B40610019698E /* FavoritesViewController.swift */,
-				DFAFF42D205B478D0019698E /* ShowCollectionViewCell.swift */,
+				DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +453,7 @@
 				DFAFF426205B3CF20019698E /* UrlHelper.swift in Sources */,
 				DFAFF428205B3F420019698E /* TabBarController.swift in Sources */,
 				DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */,
+				DF01F046205D3D9C00CC3AA3 /* DetailShowViewController.swift in Sources */,
 				DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */,
 				DFAFF42A205B40330019698E /* ShowsViewController.swift in Sources */,
 				DFAFF42E205B478D0019698E /* ShowCollectionViewCell.swift in Sources */,
