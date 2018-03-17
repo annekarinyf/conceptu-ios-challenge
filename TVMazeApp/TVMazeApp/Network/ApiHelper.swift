@@ -39,4 +39,30 @@ class ApiHelper {
         }
     }
     
+    // MARK: - Season Requests
+    static func getSeasons(forShowId id: Int, _ completion: @escaping (_ seasons: [Season]) -> Void) {
+        let url = "\(baseUrl)/shows/\(id)/seasons"
+        
+        Alamofire.request(url).responseJSON { (response) -> Void in
+            if let seasonsJson = response.result.value as? [JSON] {
+                completion(seasonsJson.flatMap { Season(json: $0) })
+            } else {
+                completion([])
+            }
+        }
+    }
+    
+    // MARK: - Episodes Requests
+    static func getEpisodes(forShowId id: Int, _ completion: @escaping (_ episodes: [Episode]) -> Void) {
+        let url = "\(baseUrl)/shows/\(id)/episodes"
+        
+        Alamofire.request(url).responseJSON { (response) -> Void in
+            if let episodesJson = response.result.value as? [JSON] {
+                completion(episodesJson.flatMap { Episode(json: $0) })
+            } else {
+                completion([])
+            }
+        }
+    }
+    
 }
