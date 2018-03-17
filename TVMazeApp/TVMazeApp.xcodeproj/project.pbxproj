@@ -10,6 +10,8 @@
 		00536FF23DFA45901F39D1FD /* Pods_TVMazeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E615BCC8C994BAC1CE71A7 /* Pods_TVMazeAppTests.framework */; };
 		A93C43795C02175C06C97092 /* Pods_TVMazeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D87F0726B4CE3F8076C756 /* Pods_TVMazeApp.framework */; };
 		DF01F046205D3D9C00CC3AA3 /* DetailShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */; };
+		DF01F049205D825600CC3AA3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01F048205D825600CC3AA3 /* Episode.swift */; };
+		DF01F04B205D893100CC3AA3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF01F04A205D893100CC3AA3 /* StringExtension.swift */; };
 		DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19C40F205B19CB004C9C77 /* AppDelegate.swift */; };
 		DF19C415205B19CB004C9C77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF19C413205B19CB004C9C77 /* Main.storyboard */; };
 		DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF19C416205B19CB004C9C77 /* TVMazeApp.xcdatamodeld */; };
@@ -43,6 +45,8 @@
 		68D87F0726B4CE3F8076C756 /* Pods_TVMazeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVMazeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF4FA83DF8EC7EC27EAE699 /* Pods-TVMazeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVMazeAppTests/Pods-TVMazeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShowViewController.swift; sourceTree = "<group>"; };
+		DF01F048205D825600CC3AA3 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		DF01F04A205D893100CC3AA3 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		DF19C40C205B19CB004C9C77 /* TVMazeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMazeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF19C40F205B19CB004C9C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF19C414205B19CB004C9C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				DFAFF41F205B32D10019698E /* Show.swift */,
+				DF01F048205D825600CC3AA3 /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,8 +177,8 @@
 				DF01F047205D441300CC3AA3 /* Cells */,
 				DFAFF427205B3F420019698E /* TabBarController.swift */,
 				DFAFF429205B40330019698E /* ShowsViewController.swift */,
-				DFAFF42B205B40610019698E /* FavoritesViewController.swift */,
 				DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */,
+				DFAFF42B205B40610019698E /* FavoritesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 		DFAFF42F205B51720019698E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DF01F04A205D893100CC3AA3 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFAFF422205B33C00019698E /* ApiHelper.swift in Sources */,
+				DF01F049205D825600CC3AA3 /* Episode.swift in Sources */,
 				DFAFF42C205B40610019698E /* FavoritesViewController.swift in Sources */,
 				DFAFF420205B32D10019698E /* Show.swift in Sources */,
 				DFAFF424205B353C0019698E /* ShowViewModel.swift in Sources */,
@@ -456,6 +463,7 @@
 				DF01F046205D3D9C00CC3AA3 /* DetailShowViewController.swift in Sources */,
 				DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */,
 				DFAFF42A205B40330019698E /* ShowsViewController.swift in Sources */,
+				DF01F04B205D893100CC3AA3 /* StringExtension.swift in Sources */,
 				DFAFF42E205B478D0019698E /* ShowCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
