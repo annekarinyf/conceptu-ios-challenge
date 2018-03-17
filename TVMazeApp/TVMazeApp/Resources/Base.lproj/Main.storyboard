@@ -105,6 +105,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Shows" id="FdV-6u-KtC"/>
                     <connections>
+                        <outlet property="showSearchBar" destination="6mQ-y1-WCM" id="q1e-Lx-jF8"/>
                         <outlet property="showsCollectionView" destination="hHD-CI-riQ" id="5C1-RJ-mEZ"/>
                     </connections>
                 </viewController>
