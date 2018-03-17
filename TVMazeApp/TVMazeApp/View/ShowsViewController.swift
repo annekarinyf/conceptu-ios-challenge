@@ -38,11 +38,24 @@ class ShowsViewController: UIViewController {
             self.showsCollectionView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "goToDetailView" {
+                if let navigationController = segue.destination as? UINavigationController, let detailViewController = navigationController.viewControllers.first as? DetailShowViewController, let show = sender as? Show {
+                    detailViewController.show = show
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegate
 extension ShowsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToDetailView", sender: shows[indexPath.row])
+    }
 }
 
 // MARK: - UICollectionViewDataSource
