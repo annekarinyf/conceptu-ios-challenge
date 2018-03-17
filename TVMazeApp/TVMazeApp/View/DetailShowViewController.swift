@@ -11,7 +11,7 @@ import UIKit
 class DetailShowViewController: UIViewController {
     
     var show: Show?
-    var seasons = [Episode]()
+    var seasons = [Season]()
     var showViewModel: ShowViewModel?
     
     @IBOutlet var showPoster: UIImageView!
@@ -27,10 +27,18 @@ class DetailShowViewController: UIViewController {
         if let show = show {
             showViewModel = ShowViewModel(show: show)
             checkImage()
+            getSeasons(fromShowId: show.id)
         }
     }
     
-    private func checkImage(){
+    private func getSeasons(fromShowId id: Int) {
+        ApiHelper.getSeasons(forShowId: id) { (seasons) in
+            self.seasons = seasons
+            self.detailsTableView.reloadData()
+        }
+    }
+    
+    private func checkImage() {
         if let show = show, let image = show.image {
             showPoster.image = image
         } else {
@@ -81,10 +89,11 @@ extension DetailShowViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
         guard let showViewModel = showViewModel else { return cell }
-        cell.textLabel?.numberOfLines = 0
         
-        if tableView == detailsTableView {
-    
+        if indexPath.section == 0 {
+            cell.textLabel?.numberOfLines = 0
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = showViewModel.name
@@ -96,7 +105,10 @@ extension DetailShowViewController: UITableViewDataSource {
                 cell.textLabel?.text = showViewModel.summary
             }
         } else {
-           
+            cell.selectionStyle = UITableViewCellSelectionStyle.default
+            
+            let seasonViewModel = SeasonViewModel(season: seasons[indexPath.row])
+            cell.textLabel?.text = seasonViewModel.description
         }
          return cell
     }

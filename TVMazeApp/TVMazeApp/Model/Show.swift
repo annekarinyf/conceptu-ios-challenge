@@ -21,14 +21,14 @@ class Show {
     
     init?(json: JSON) {
         guard let id = json["id"] as? Int,
-        let name = json["name"] as? String,
-        let imageJson = json["image"] as? JSON,
-        let imageUrl = imageJson["medium"] as? String,
-        let schedule = json["schedule"] as? JSON,
-        let time = schedule["time"] as? String,
-        let days = schedule["days"] as? [String],
-        let genres = json["genres"] as? [String],
-        let summary = json["summary"] as? String else { return nil }
+            let name = json["name"] as? String,
+            let imageJson = json["image"] as? JSON,
+            let imageUrl = imageJson["medium"] as? String,
+            let schedule = json["schedule"] as? JSON,
+            let time = schedule["time"] as? String,
+            let days = schedule["days"] as? [String],
+            let genres = json["genres"] as? [String],
+            let summary = json["summary"] as? String else { return nil }
         
         self.id = id
         self.name = name
