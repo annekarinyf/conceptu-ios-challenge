@@ -123,20 +123,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uzy-K2-77S">
-                                <rect key="frame" x="75" y="74" width="225" height="272.5"/>
+                                <rect key="frame" x="75" y="74" width="225" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uzy-K2-77S" secondAttribute="height" multiplier="105:127" id="9a8-k1-l6Y"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQZ-qv-Qao">
-                                <rect key="frame" x="256" y="74" width="44" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PQZ-qv-Qao" secondAttribute="height" multiplier="91:62" id="EjR-3T-YHi"/>
-                                </constraints>
-                                <state key="normal" title="x"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xmB-Cb-qcg" userLabel="Details Table View">
-                                <rect key="frame" x="16" y="351.5" width="343" height="305.5"/>
+                                <rect key="frame" x="16" y="352" width="343" height="305"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" textLabel="44F-Cj-7Od" style="IBUITableViewCellStyleDefault" id="G21-IE-YCa">
@@ -163,17 +156,28 @@
                                     <outlet property="delegate" destination="fPX-nX-V1l" id="4Is-o7-WDf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-qe-6MD">
+                                <rect key="frame" x="314" y="185" width="45" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="9vk-qE-UfS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="heart"/>
+                                <connections>
+                                    <action selector="favoriteShow:" destination="fPX-nX-V1l" eventType="touchUpInside" id="iOK-Fo-zYO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fcd-qe-6MD" firstAttribute="leading" secondItem="uzy-K2-77S" secondAttribute="trailing" constant="14" id="AHY-eo-cpi"/>
                             <constraint firstItem="uzy-K2-77S" firstAttribute="width" secondItem="OCV-fz-Ow5" secondAttribute="width" multiplier="0.6" id="Enc-uF-9X7"/>
                             <constraint firstItem="xmB-Cb-qcg" firstAttribute="top" secondItem="uzy-K2-77S" secondAttribute="bottom" constant="5" id="GLV-CF-M6R"/>
+                            <constraint firstItem="fcd-qe-6MD" firstAttribute="top" secondItem="TLq-a7-I6X" secondAttribute="top" constant="121" id="Hyt-hV-Y34"/>
                             <constraint firstItem="xmB-Cb-qcg" firstAttribute="centerX" secondItem="TLq-a7-I6X" secondAttribute="centerX" id="MrK-o2-KOL"/>
                             <constraint firstItem="uzy-K2-77S" firstAttribute="centerX" secondItem="TLq-a7-I6X" secondAttribute="centerX" id="X83-H1-QYe"/>
+                            <constraint firstItem="fcd-qe-6MD" firstAttribute="trailing" secondItem="xmB-Cb-qcg" secondAttribute="trailing" id="Xgd-Ru-orj"/>
                             <constraint firstItem="TLq-a7-I6X" firstAttribute="bottom" secondItem="xmB-Cb-qcg" secondAttribute="bottom" constant="10" id="Z81-wQ-Nm2"/>
                             <constraint firstItem="TLq-a7-I6X" firstAttribute="trailing" secondItem="xmB-Cb-qcg" secondAttribute="trailing" constant="16" id="Zc7-6a-VdV"/>
-                            <constraint firstItem="PQZ-qv-Qao" firstAttribute="trailing" secondItem="uzy-K2-77S" secondAttribute="trailing" id="Zig-Ll-uwM"/>
-                            <constraint firstItem="PQZ-qv-Qao" firstAttribute="top" secondItem="uzy-K2-77S" secondAttribute="top" id="gYd-KA-UOj"/>
                             <constraint firstItem="uzy-K2-77S" firstAttribute="top" secondItem="TLq-a7-I6X" secondAttribute="top" constant="10" id="iI5-Zd-vkM"/>
                             <constraint firstItem="xmB-Cb-qcg" firstAttribute="leading" secondItem="TLq-a7-I6X" secondAttribute="leading" constant="16" id="mRE-8T-45S"/>
                         </constraints>
@@ -188,7 +192,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailsTableView" destination="xmB-Cb-qcg" id="aWx-e9-zi8"/>
-                        <outlet property="favoriteShowButton" destination="PQZ-qv-Qao" id="79K-VR-KGc"/>
                         <outlet property="showPoster" destination="uzy-K2-77S" id="Km3-TB-LM9"/>
                     </connections>
                 </viewController>
@@ -231,4 +234,7 @@
             <point key="canvasLocation" x="-796" y="152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="32" height="32"/>
+    </resources>
 </document>

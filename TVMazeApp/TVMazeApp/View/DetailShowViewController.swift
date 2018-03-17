@@ -16,7 +16,6 @@ class DetailShowViewController: UIViewController {
     
     @IBOutlet var showPoster: UIImageView!
     @IBOutlet var detailsTableView: UITableView!
-    @IBOutlet var favoriteShowButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +67,12 @@ class DetailShowViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func favoriteShow(_ sender: UIButton) {
+        sender.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
+        
+    }
+    
     
     @IBAction func dismissDetailView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
