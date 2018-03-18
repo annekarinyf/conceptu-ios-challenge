@@ -89,6 +89,16 @@ class DetailShowViewController: UIViewController {
     @IBAction func dismissDetailView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "goToDetailEpisode" {
+                if let detailEpisodeViewController = segue.destination as? DetailEpisodeViewController, let episode = sender as? Episode {
+                    detailEpisodeViewController.episode = episode
+                }
+            }
+        }
+    }
 }
 
 extension DetailShowViewController: UITableViewDelegate {
@@ -123,6 +133,12 @@ extension DetailShowViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let show = show {
+             performSegue(withIdentifier: "goToDetailEpisode", sender: show.seasons[indexPath.section-1].episodes[indexPath.row])
+        }
     }
 }
 

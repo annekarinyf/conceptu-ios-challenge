@@ -30,6 +30,8 @@
 		DFFEBF57205D9B4C00657E4B /* SeasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEBF56205D9B4C00657E4B /* SeasonViewModel.swift */; };
 		DFFEBF5B205DDABB00657E4B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEBF5A205DDABB00657E4B /* CoreDataStack.swift */; };
 		DFFEBF5D205DDC5A00657E4B /* CoreDataStackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEBF5C205DDC5A00657E4B /* CoreDataStackExtension.swift */; };
+		DFFEBF5F205E87F000657E4B /* DetailEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEBF5E205E87F000657E4B /* DetailEpisodeViewController.swift */; };
+		DFFEBF61205E8B4700657E4B /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEBF60205E8B4700657E4B /* EpisodeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		DFFEBF56205D9B4C00657E4B /* SeasonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewModel.swift; sourceTree = "<group>"; };
 		DFFEBF5A205DDABB00657E4B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		DFFEBF5C205DDC5A00657E4B /* CoreDataStackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackExtension.swift; sourceTree = "<group>"; };
+		DFFEBF5E205E87F000657E4B /* DetailEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisodeViewController.swift; sourceTree = "<group>"; };
+		DFFEBF60205E8B4700657E4B /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		E16C4953579C0E524CFC3328 /* Pods-TVMazeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVMazeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVMazeApp/Pods-TVMazeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +192,7 @@
 				DFAFF427205B3F420019698E /* TabBarController.swift */,
 				DFAFF429205B40330019698E /* ShowsViewController.swift */,
 				DF01F045205D3D9C00CC3AA3 /* DetailShowViewController.swift */,
+				DFFEBF5E205E87F000657E4B /* DetailEpisodeViewController.swift */,
 				DFAFF42B205B40610019698E /* FavoritesViewController.swift */,
 			);
 			path = View;
@@ -198,6 +203,7 @@
 			children = (
 				DFAFF423205B353C0019698E /* ShowViewModel.swift */,
 				DFFEBF56205D9B4C00657E4B /* SeasonViewModel.swift */,
+				DFFEBF60205E8B4700657E4B /* EpisodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -479,8 +485,10 @@
 				DFAFF424205B353C0019698E /* ShowViewModel.swift in Sources */,
 				DFAFF426205B3CF20019698E /* UrlHelper.swift in Sources */,
 				DFFEBF57205D9B4C00657E4B /* SeasonViewModel.swift in Sources */,
+				DFFEBF61205E8B4700657E4B /* EpisodeViewModel.swift in Sources */,
 				DFFEBF5B205DDABB00657E4B /* CoreDataStack.swift in Sources */,
 				DFAFF428205B3F420019698E /* TabBarController.swift in Sources */,
+				DFFEBF5F205E87F000657E4B /* DetailEpisodeViewController.swift in Sources */,
 				DF19C418205B19CB004C9C77 /* TVMazeApp.xcdatamodeld in Sources */,
 				DF01F046205D3D9C00CC3AA3 /* DetailShowViewController.swift in Sources */,
 				DF19C410205B19CB004C9C77 /* AppDelegate.swift in Sources */,

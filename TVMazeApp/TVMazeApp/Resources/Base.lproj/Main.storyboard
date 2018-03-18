@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -194,11 +195,75 @@
                         <outlet property="detailsTableView" destination="xmB-Cb-qcg" id="aWx-e9-zi8"/>
                         <outlet property="favoriteButton" destination="fcd-qe-6MD" id="0nH-4I-s0g"/>
                         <outlet property="showPoster" destination="uzy-K2-77S" id="Km3-TB-LM9"/>
+                        <segue destination="SVj-N1-Tbl" kind="show" identifier="goToDetailEpisode" id="MQ6-SS-T4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2v-SX-eXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="-181.25937031484258"/>
+        </scene>
+        <!--Detail Episode View Controller-->
+        <scene sceneID="Yr9-Io-gC5">
+            <objects>
+                <viewController id="SVj-N1-Tbl" customClass="DetailEpisodeViewController" customModule="TVMazeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k7d-9O-cVo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIS-2O-gfs">
+                                <rect key="frame" x="16" y="352" width="343" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailEpisode" textLabel="IgJ-pg-J1c" style="IBUITableViewCellStyleDefault" id="AtT-0k-d4S">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AtT-0k-d4S" id="Ye9-Kt-Oyd">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IgJ-pg-J1c">
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SVj-N1-Tbl" id="qpN-Ib-iO4"/>
+                                    <outlet property="delegate" destination="SVj-N1-Tbl" id="797-Cu-1sM"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyBG" translatesAutoresizingMaskIntoConstraints="NO" id="AUy-Dh-ONX">
+                                <rect key="frame" x="16" y="74" width="343" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="wZA-MH-Co2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vIS-2O-gfs" firstAttribute="top" secondItem="AUy-Dh-ONX" secondAttribute="bottom" constant="23" id="Gz0-LS-EQk"/>
+                            <constraint firstItem="vIS-2O-gfs" firstAttribute="bottom" secondItem="pvc-O1-PC1" secondAttribute="bottom" id="Spu-Fb-6MW"/>
+                            <constraint firstItem="AUy-Dh-ONX" firstAttribute="leading" secondItem="vIS-2O-gfs" secondAttribute="leading" id="Vr9-Db-p8w"/>
+                            <constraint firstItem="AUy-Dh-ONX" firstAttribute="trailing" secondItem="k7d-9O-cVo" secondAttribute="trailingMargin" id="ZIT-Bl-GBl"/>
+                            <constraint firstItem="AUy-Dh-ONX" firstAttribute="leading" secondItem="k7d-9O-cVo" secondAttribute="leadingMargin" id="pzL-VI-6Mn"/>
+                            <constraint firstItem="AUy-Dh-ONX" firstAttribute="trailing" secondItem="vIS-2O-gfs" secondAttribute="trailing" id="sWo-Yi-FUO"/>
+                            <constraint firstItem="AUy-Dh-ONX" firstAttribute="top" secondItem="pvc-O1-PC1" secondAttribute="top" constant="10" id="zxT-sM-iio"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pvc-O1-PC1"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailEpisodeTableView" destination="vIS-2O-gfs" id="48w-SL-OfO"/>
+                        <outlet property="episodeImage" destination="AUy-Dh-ONX" id="aLa-Yf-Q7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NxP-oC-Ria" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205.5999999999999" y="-181.25937031484258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PXb-Ad-HiK">
@@ -236,6 +301,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="greyBG" width="1000" height="1000"/>
         <image name="heart" width="32" height="32"/>
     </resources>
 </document>
