@@ -18,6 +18,9 @@ class DetailEpisodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkImage()
+        if let episode = episode {
+            self.title = episode.name
+        }
     }
     
     private func checkImage(){
@@ -49,6 +52,7 @@ extension DetailEpisodeViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailEpisode", for: indexPath)
+        cell.textLabel?.textColor = UIColor.white
         guard let episode = episode else { return cell}
         let episodeViewModel =  EpisodeViewModel(episode: episode)
         

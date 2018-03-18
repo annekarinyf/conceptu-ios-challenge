@@ -20,6 +20,9 @@ class DetailShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let show = show {
+            self.title = show.name
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +70,6 @@ class DetailShowViewController: UIViewController {
                 self.showPoster.image = image
             })
         }
-    
         if let show = show, let _ = CoreDataStack.read(withId: show.id) {
             favoriteButton.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
         }
@@ -103,18 +105,17 @@ class DetailShowViewController: UIViewController {
 
 extension DetailShowViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let _ = show, let seasons = show?.seasons {
-            return seasons.count+1
+        if let show = show {
+            return show.seasons.count+1
         } else {
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         if section != 0 {
-            if let _ = show, let season = show?.seasons[section-1] {
-                seasonViewModel = SeasonViewModel(season: season)
+            if let show = show {
+                seasonViewModel = SeasonViewModel(season: show.seasons[section-1])
                 if let seasonViewModel = seasonViewModel {
                     return seasonViewModel.description
                 } else {
@@ -136,14 +137,14 @@ extension DetailShowViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let show = show {
-             performSegue(withIdentifier: "goToDetailEpisode", sender: show.seasons[indexPath.section-1].episodes[indexPath.row])
+        if let show = show, indexPath.section != 0 {
+            performSegue(withIdentifier: "goToDetailEpisode", sender: show.seasons[indexPath.section-1].episodes[indexPath.row])
         }
     }
 }
 
 extension DetailShowViewController: UITableViewDataSource {
-
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 4
@@ -158,10 +159,11 @@ extension DetailShowViewController: UITableViewDataSource {
             return 0
         }
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+        cell.textLabel?.textColor = UIColor.white
         guard let showViewModel = showViewModel else { return cell }
         
         if indexPath.section == 0 {
@@ -172,9 +174,9 @@ extension DetailShowViewController: UITableViewDataSource {
             case 0:
                 cell.textLabel?.text = showViewModel.name
             case 1:
-                cell.textLabel?.text = showViewModel.exibitionDayAndTime
+                cell.textLabel?.text = showViewModel.exhibitionDayAndTime
             case 2:
-                cell.textLabel?.text = showViewModel.genders
+                cell.textLabel?.text = showViewModel.genres
             default:
                 cell.textLabel?.text = showViewModel.summary
             }
@@ -183,9 +185,9 @@ extension DetailShowViewController: UITableViewDataSource {
             if let show = show {
                 let season = show.seasons[indexPath.section-1]
                 let episode = season.episodes[indexPath.row]
-                cell.textLabel?.text = episode.name
+                cell.textLabel?.text = "\(episode.number). \(episode.name)"
             }
         }
-         return cell
+        return cell
     }
 }
