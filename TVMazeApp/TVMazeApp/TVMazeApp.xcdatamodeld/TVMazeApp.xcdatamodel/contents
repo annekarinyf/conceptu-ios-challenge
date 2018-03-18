@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="SeasonDB" representedClassName="SeasonDB" syncable="YES" codeGenerationType="class">
-        <attribute name="episodes" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
     <entity name="ShowDB" representedClassName="ShowDB" syncable="YES" codeGenerationType="class">
         <attribute name="days" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="genres" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -15,10 +9,8 @@
         <attribute name="seasons" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="manySeasons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SeasonDB" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShowDB" positionX="-63" positionY="-18" width="128" height="180"/>
-        <element name="SeasonDB" positionX="-54" positionY="54" width="128" height="105"/>
+        <element name="ShowDB" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
