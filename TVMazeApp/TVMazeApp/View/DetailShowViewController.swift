@@ -70,7 +70,9 @@ class DetailShowViewController: UIViewController {
     
     @IBAction func favoriteShow(_ sender: UIButton) {
         sender.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
-        
+        if let show = show {
+            CoreDataStack.save(show)
+        }
     }
     
     

@@ -39,4 +39,14 @@ class Show {
         self.genres = genres
         self.summary = summary
     }
+    
+    init(id: Int, name: String, imageUrl: String, time: String, days: [String], genres: [String], summary: String) {
+        self.id = id
+        self.name = name
+        self.imageUrl = imageUrl
+        self.time = time
+        self.days = days
+        self.genres = genres
+        self.summary = summary
+    }
 }
