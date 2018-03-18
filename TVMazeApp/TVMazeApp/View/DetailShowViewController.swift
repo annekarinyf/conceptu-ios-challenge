@@ -16,6 +16,7 @@ class DetailShowViewController: UIViewController {
     
     @IBOutlet var showPoster: UIImageView!
     @IBOutlet var detailsTableView: UITableView!
+    @IBOutlet var favoriteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class DetailShowViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let show = show {
             showViewModel = ShowViewModel(show: show)
-            checkImage()
+            checkImages()
             getSeasons(fromShow: show, { (finished) in
                 if finished {
                     self.getEpisodes(fromShow: show)
@@ -58,7 +59,7 @@ class DetailShowViewController: UIViewController {
         }
     }
     
-    private func checkImage() {
+    private func checkImages() {
         if let show = show, let image = show.image {
             showPoster.image = image
         } else {
@@ -66,12 +67,21 @@ class DetailShowViewController: UIViewController {
                 self.showPoster.image = image
             })
         }
+    
+        if let show = show, let _ = CoreDataStack.read(withId: show.id) {
+            favoriteButton.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
+        }
     }
     
     @IBAction func favoriteShow(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
-        if let show = show {
+        guard let show = show else { return }
+        
+        if let _ = CoreDataStack.read(withId: show.id) {
+            CoreDataStack.delete(withId: show.id)
+            favoriteButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
+        } else {
             CoreDataStack.save(show)
+            favoriteButton.setBackgroundImage(UIImage(named: "favorite-heart"), for: .normal)
         }
     }
     

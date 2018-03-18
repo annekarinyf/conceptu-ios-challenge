@@ -19,6 +19,7 @@ class ShowsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showSearchBar.delegate = self
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {

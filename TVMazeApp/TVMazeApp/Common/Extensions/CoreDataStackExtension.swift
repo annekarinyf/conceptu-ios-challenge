@@ -38,13 +38,29 @@ extension CoreDataStack {
     
     // MARK: - Read
     static func read() -> [Show]? {
-        
         let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
         fetchRequest.relationshipKeyPathsForPrefetching = ["manySeasons"]
         
         do {
             let result = try context.fetch(fetchRequest)
             return result.map { show(fromShowDB: $0) }
+        } catch {
+            return nil
+        }
+    }
+    
+    static func read(withId id: Int) -> Show? {
+        let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == \(id)")
+        fetchRequest.relationshipKeyPathsForPrefetching = ["manySeasons"]
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            if let showDB = result.first {
+                return show(fromShowDB: showDB)
+            } else {
+                return nil
+            }
         } catch {
             return nil
         }
@@ -67,20 +83,17 @@ extension CoreDataStack {
     }
     
     // MARK: - Delete
-    
     static func delete(withId id: Int) {
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "ShowDB")
+        deleteFetch.predicate = NSPredicate(format: "id == \(id)")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
         do {
-            let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
-            let result = try context.fetch(fetchRequest)
-            
-            for showDB in result {
-                context.delete(showDB)
-            }
+            try context.execute(deleteRequest)
+            try context.save()
         } catch {
-            print("Error on fetch")
-            delete(withId: id)
+            print ("There was an error")
         }
     }
-
+    
 }

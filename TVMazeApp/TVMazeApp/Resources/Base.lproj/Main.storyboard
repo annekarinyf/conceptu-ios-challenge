@@ -192,6 +192,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailsTableView" destination="xmB-Cb-qcg" id="aWx-e9-zi8"/>
+                        <outlet property="favoriteButton" destination="fcd-qe-6MD" id="0nH-4I-s0g"/>
                         <outlet property="showPoster" destination="uzy-K2-77S" id="Km3-TB-LM9"/>
                     </connections>
                 </viewController>
