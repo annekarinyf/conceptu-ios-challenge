@@ -40,6 +40,22 @@ extension CoreDataStack {
     static func read() -> [Show]? {
         let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
         fetchRequest.relationshipKeyPathsForPrefetching = ["manySeasons"]
+        let sort = NSSortDescriptor(key: #keyPath(ShowDB.name), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.map { show(fromShowDB: $0) }
+        } catch {
+            return nil
+        }
+    }
+    
+    static func read(withName name: String) -> [Show]? {
+        let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name contains %@", name)
+        let sort = NSSortDescriptor(key: #keyPath(ShowDB.name), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         
         do {
             let result = try context.fetch(fetchRequest)
@@ -52,7 +68,6 @@ extension CoreDataStack {
     static func read(withId id: Int) -> Show? {
         let fetchRequest: NSFetchRequest<ShowDB> = ShowDB.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == \(id)")
-        fetchRequest.relationshipKeyPathsForPrefetching = ["manySeasons"]
         
         do {
             let result = try context.fetch(fetchRequest)
