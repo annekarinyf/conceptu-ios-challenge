@@ -12,26 +12,26 @@ class ShowViewModel {
     
     let name: String
     var image: UIImage?
-    var exibitionDayAndTime: String
-    var genders: String
+    var exhibitionDayAndTime: String
+    var genres: String
     var summary: String
     private var show: Show
     
     init(show: Show) {
         self.show = show
         self.name = show.name
-        self.exibitionDayAndTime = ShowViewModel.getExibitionDayAndTime(from: show)
-        self.genders = ShowViewModel.getGendersString(from: show)
+        self.exhibitionDayAndTime = ShowViewModel.getExhibitionDayAndTime(from: show)
+        self.genres = ShowViewModel.getGenresString(from: show)
         self.summary = ShowViewModel.getFormattedSummary(from: show)
     }
     
-    private static func getExibitionDayAndTime(from show: Show) -> String {
+    private static func getExhibitionDayAndTime(from show: Show) -> String {
         let days = show.days.joined(separator: ", ")
         return "The show in on \(days) at \(show.time)"
     }
     
-    private static func getGendersString(from show: Show) -> String {
-        let genders = show.days.joined(separator: ", ")
+    private static func getGenresString(from show: Show) -> String {
+        let genders = show.genres.joined(separator: ", ")
         return "Genders: \(genders)"
     }
     
@@ -51,5 +51,4 @@ class ShowViewModel {
             }
         }
     }
-    
 }

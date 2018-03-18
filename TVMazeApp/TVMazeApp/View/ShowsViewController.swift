@@ -15,18 +15,37 @@ class ShowsViewController: UIViewController {
     @IBOutlet var showsCollectionView: UICollectionView!
     @IBOutlet var showSearchBar: UISearchBar!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         showSearchBar.delegate = self
-       
+        setTabBarItems()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getShows()
+        if let tabBarController = tabBarController {
+            tabBarController.selectedIndex == 0 ? getShowsFromAPI() : getShowsFromDB()
+        }
     }
     
-    private func getShows() {
+    private func setTabBarItems(){
+        if let tabBarController = tabBarController, let items = tabBarController.tabBar.items {
+            let showsItem = items[0]
+            showsItem.title = "Shows"
+            showsItem.image = UIImage(named: "show")
+            let favoritesItem = items[1]
+            favoritesItem.title = "Favorites"
+            favoritesItem.image = UIImage(named: "heart")
+        }
+    }
+    
+    private func getShowsFromDB() {
+        if let shows = CoreDataStack.read() {
+            self.shows = shows
+            self.showsCollectionView.reloadData()
+        }
+    }
+    
+    private func getShowsFromAPI() {
         ApiHelper.getShows { (shows) in
             self.shows = shows
             self.showsCollectionView.reloadData()
@@ -34,26 +53,39 @@ class ShowsViewController: UIViewController {
     }
     
     private func searchShows(forSearchText searchText: String) {
-        ApiHelper.getShows(forSearchWords: searchText) { (shows) in
+        if let tabBarController = tabBarController {
+            tabBarController.selectedIndex == 0 ?  getShowsFromAPI(forSearchWord: searchText): getShowsFromDB(forSearchWord: searchText)
+        }
+        
+    }
+    
+    private func getShowsFromAPI(forSearchWord word: String) {
+        ApiHelper.getShows(forSearchWord: word) { (shows) in
             self.shows = shows
+            self.showsCollectionView.reloadData()
+        }
+    }
+    private func getShowsFromDB(forSearchWord word: String) {
+        if let showsFromDB = CoreDataStack.read(withName: word) {
+            self.shows = showsFromDB
             self.showsCollectionView.reloadData()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "goToDetailView" {
-                if let navigationController = segue.destination as? UINavigationController, let detailViewController = navigationController.viewControllers.first as? DetailShowViewController, let show = sender as? Show {
-                    detailViewController.show = show
-                }
-            }
+        if let identifier = segue.identifier,
+            let navigationController = segue.destination as? UINavigationController,
+            let detailViewController = navigationController.viewControllers.first as? DetailShowViewController,
+            let show = sender as? Show, identifier == "goToDetailView" {
+            
+            detailViewController.show = show
         }
     }
+    
 }
 
 // MARK: - UICollectionViewDelegate
 extension ShowsViewController: UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToDetailView", sender: shows[indexPath.row])
     }
@@ -74,16 +106,19 @@ extension ShowsViewController: UICollectionViewDataSource {
         showViewModel.getImage { (image) in
             cell.showImage.image = image
         }
-    
         return cell
     }
 }
 
 // MARK: - UISearchBarDelegate
 extension ShowsViewController: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchText == ""  ? getShows() : searchShows(forSearchText: searchText)
+        if let tabBarController = tabBarController {
+            if searchText == "" {
+                tabBarController.selectedIndex == 0 ? getShowsFromAPI() : getShowsFromDB()
+            } else {
+                searchShows(forSearchText: searchText)
+            }
+        }
     }
 }
-
